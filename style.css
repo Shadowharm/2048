@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    width: 1920px;
+    height: 1080px;
+    background-color: #FFFDFD;
+    margin: 0px;
+}
+#head{
+    background-color:#FBE204;
+    width: 1920px;
+    height: 108px;
+    display: flex;
+    justify-content: center;
+}
+#r153{
+    display: flex;
+    background: rgba(255, 122, 0, 0.5);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+
+}
+#t2048{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 96px;
+    line-height: 112px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: black;
+    
+}
+#r115{
+    width: 236px;
+    height: 486px;
+    left: 0px;
+    top: 108px;
+    background: rgba(255, 127, 0, 0.7);
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#t4x4{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 84px;
+    text-align: center;
+
+}
+#r116{
+    width: 236px;
+    height: 486px;
+    left: 0px;
+    top: 594px;
+    background: #FFC373;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#t5x5{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 84px;
+    text-align: center;
+
+}
+#score{
+    position: absolute;
+    width: 249px;
+    height: 108px;
+    left: 244px;
+    top: 172px;
+
+    background: rgba(255, 122, 0, 0.7);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+}
+.tscore{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+
+
+#delta{
+    position: absolute;
+    width: 103px;
+    height: 43px;
+    left: 420px;
+    top: 204px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#best{
+    position: absolute;
+    width: 249px;
+    height: 108px;
+    left: 244px;
+    top: 298px;
+
+    background: rgba(255, 122, 0, 0.7);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tbest{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#classic{
+    position: absolute;
+    width: 324px;
+    height: 324px;
+    left: 1596px;
+    top: 108px;
+
+    background: rgba(255, 127, 0, 0.7);
+    border: 2px solid #000000;
+    box-sizing: border-box;
+}
+#imgclassic{
+    width: 194px;
+    height: 203px;
+    margin-top: 35px;
+    border-radius: 31px;
+    margin-left: 65px;
+    margin-right: 65px;
+}
+#tclassic{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    margin-top: 3px;
+    margin-left: 56px;
+    margin-right: 57px
+}
+#doge{
+    position: absolute;
+    width: 324px;
+    height: 324px;
+    left: 1596px;
+    top: 432px;
+
+    background: #FFC373;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+}
+#imgdoge{
+    width: 194px;
+    height: 203px;
+    margin-top: 35px;
+    border-radius: 31px;
+    margin-left: 65px;
+    margin-right: 65px;
+}
+#tdoge{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    margin-top: 3px;
+    margin-left: 87px;
+    margin-right: 88px
+}
+#memes{
+    position: absolute;
+    width: 324px;
+    height: 324px;
+    left: 1596px;
+    top: 756px;
+
+    background: #FFC373;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+}
+#imgmemes{
+    width: 194px;
+    height: 203px;
+    margin-top: 35px;
+    border-radius: 31px;
+    margin-left: 65px;
+    margin-right: 65px;
+}
+#tmemes{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    margin-top: 3px;
+    margin-left: 55px;
+    margin-right: 55px
+}
+#main{
+    position: absolute;
+    width: 875px;
+    height: 875px;
+    left: 522px;
+    top: 157px;
+
+    background: rgba(191, 130, 48, 0.4);
+    border-radius: 15px;
+
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+    
+    
+}
+.bl{
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 146, 0, 0.25);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 15px;
+    
+    margin-left: 15px;
+    margin-top: 15px;
+
+}
+#bl13{
+    margin-bottom: 15px;
+}
+#bl14{
+    margin-bottom: 15px;
+}
+#bl15{
+    margin-bottom: 15px;
+}
+#bl16{
+    margin-bottom: 15px;
+}
+.bl4x4{
+    width: 197px;
+    height: 197px;
+    
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: Roboto;
+
+}
+.bl5x5{
+    width:162px;
+    height: 162px;
+    
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: Roboto;
+    
+}
+#gameover{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+#go{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 96px;
+    line-height: 112px;
+    text-align: center;
+}
+#tryagain{
+    width: 363px;
+    height: 93px;
+    background-color: #E4E4E4;
+    opacity: 0.8;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+#textta{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+
+}
