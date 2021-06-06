@@ -32,32 +32,29 @@ function m2048(mas){
                 $('#bl'+ String(num(i,j))).empty()
             }
             if(mas[i][j]==2048){
-                $('#gameover').fadeIn()
-                
-                $('#gameover').html('<span id="go">You win!</span><div id="tryagain"><span id="textta">Play again</span></div>')
-                $('#tryagain').on('click', function(){
-                    if(n==4){
-                        mas=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
-                    }
-                    else{
-                        mas=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
-                    }
-                    score=0
-                    insert(mas)
-                    m2048(mas)
-                    
-                    $('#gameover').fadeOut()
-                })
+                gameOver(n, 2)
+                mas=0
+                localStorage.setItem('best4', String(score))
             }
         }
     }
     if(n==4){
         $('.bl5x5').attr('class','bl4x4')
+
+        if(score>localStorage.getItem('best4')){
+            localStorage.setItem('best4', String(score))
+            $('#tb').text(localStorage.getItem('best4'))
+        }    
     }
     else{
         $('.bl4x4').attr('class','bl5x5')
+
+        if(score>localStorage.getItem('best5')){
+            localStorage.setItem('best5', String(score))
+            $('#tb').text(localStorage.getItem('best5'))
+        }    
     }
-        
+    
     
 }
 
@@ -192,7 +189,46 @@ function moveDown(mas){
     }
     return dscore
 }
-
+function gameOver(n, mode){
+    $('#gameover').fadeIn()
+    if(mode==1){
+        $('#gameover').html('<span id="go">Game over</span><div id="tryagain"><span id="textta">Try again</span></div>')
+    }           
+    else{
+        $('#gameover').html('<span id="go">You win!</span><div id="tryagain"><span id="textta">Play again</span></div>')
+    }
+    $('#tryagain').on('click', function(){
+    if(n==4){
+        mas=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
+    }
+    else{
+        mas=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
+    }
+    score=0
+    insert(mas)
+    m2048(mas)
+                    
+    $('#gameover').fadeOut()
+    })
+}
+function viewDelta(){
+    $('#delta').finish()
+    $('#delta').text('+'+String(delta))
+    $('#delta').fadeTo(300, 1)
+    $('#delta').fadeTo(300,0)
+}
+function draw(){
+    for(i=0;i<n;i++){
+        for(j=0;j<n;j++){
+            if(mas[i][j]!=0){
+                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String((blfs[mas[i][j]]-10*(n-4))/10.8)}vh'>${blocks[mas[i][j]]}</div>`)
+            }
+            else{
+                $('#bl'+ String(num(i,j))).empty()
+            }
+        }
+    }
+}
 // Variables
 let mas=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
 let n = 4
@@ -270,10 +306,7 @@ $('body').on('keydown', function(event){
             
             score+=delta
             if(delta!=0){
-                $('#delta').finish()
-                $('#delta').text('+'+String(delta))
-                $('#delta').fadeTo(300, 1)
-                $('#delta').fadeTo(300,0)
+                viewDelta()
                 
             }
             
@@ -282,22 +315,8 @@ $('body').on('keydown', function(event){
                 m2048(mas)
             }
             else{
-                $('#gameover').fadeIn()
-                
-                $('#gameover').html('<span id="go">Game over</span><div id="tryagain"><span id="textta">Try again</span></div>')
-                $('#tryagain').on('click', function(){
-                    if(n==4){
-                        mas=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
-                    }
-                    else{
-                        mas=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
-                    }
-                    score=0
-                    insert(mas)
-                    m2048(mas)
-                    
-                    $('#gameover').fadeOut()
-                })
+                gameOver(n,1)
+                mas=0 
             }
             
         }
@@ -306,33 +325,14 @@ $('body').on('keydown', function(event){
             
             score+=delta
             if(delta!=0){
-                $('#delta').finish()
-
-                $('#delta').text('+'+String(delta))
-                
-                $('#delta').fadeTo(300, 1)
-                $('#delta').fadeTo(300,0)
+                viewDelta()
             }
             if((emptyNums(mas))){
                 m2048(mas)
             }
             else{
-                $('#gameover').fadeIn()
-                
-                $('#gameover').html('<span id="go">Game over</span><div id="tryagain"><span id="textta">Try again</span></div>')
-                $('#tryagain').on('click', function(){
-                    if(n==4){
-                        mas=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
-                    }
-                    else{
-                        mas=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
-                    }
-                    score=0
-                    insert(mas)
-                    m2048(mas)
-                    
-                    $('#gameover').fadeOut()
-                })
+                gameOver(n,1)
+                mas=0
             }
         }
         if(event.keyCode===39 || event.keyCode===68){
@@ -340,32 +340,14 @@ $('body').on('keydown', function(event){
             
             score+=delta
             if(delta!=0){
-                $('#delta').finish()
-
-                $('#delta').text('+'+String(delta))
-                $('#delta').fadeTo(300, 1)
-                $('#delta').fadeTo(300,0)
+                viewDelta()
             }
             if(emptyNums(mas)){
                 m2048(mas)
             }
             else{
-                $('#gameover').fadeIn()
-                
-                $('#gameover').html('<span id="go">Game over</span><div id="tryagain"><span id="textta">Try again</span></div>')
-                $('#tryagain').on('click', function(){
-                    if(n==4){
-                        mas=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
-                    }
-                    else{
-                        mas=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
-                    }
-                    score=0
-                    insert(mas)
-                    m2048(mas)
-                    
-                    $('#gameover').fadeOut()
-                })
+                gameOver(n,1)
+                mas=0
             }
         }
         if(event.keyCode===40 || event.keyCode===83){
@@ -373,33 +355,14 @@ $('body').on('keydown', function(event){
             
             score+=delta
             if(delta!=0){
-                $('#delta').finish()
-
-                $('#delta').text('+'+String(delta))
-                $('#delta').fadeTo(300, 1)
-                $('#delta').fadeTo(300,0)
-                
+                viewDelta()
             }
             if(emptyNums(mas)){
                 m2048(mas)
             }
             else{
-                $('#gameover').fadeIn()
-                
-                $('#gameover').html('<span id="go">Game over</span><div id="tryagain"><span id="textta">Try again</span></div>')
-                $('#tryagain').on('click', function(){
-                    if(n==4){
-                        mas=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
-                    }
-                    else{
-                        mas=[[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]];
-                    }
-                    score=0
-                    insert(mas)
-                    m2048(mas)
-                    
-                    $('#gameover').fadeOut()
-                })
+                gameOver(n,1)
+                mas=0
             }
         }})
 $('#r116').on('click', function(){
@@ -423,6 +386,14 @@ $('#r116').on('click', function(){
     
     $('#r116').css('border','0.648vh solid #FF0000')
     $('#r115').css('border','0.185vh solid #000000')
+
+    if(localStorage.getItem('best5')>0){
+        $('#tb').text(localStorage.getItem('best5'))
+    }
+    else{
+        localStorage.setItem('best5', 0)
+        $('#tb').text(localStorage.getItem('best5'))
+    }
     
 
 
@@ -451,6 +422,14 @@ $('#r115').on('click', function(){
     
     $('#r115').css('border','0.648vh solid #FF0000')
     $('#r116').css('border','0.185vh solid #000000')
+
+    if(localStorage.getItem('best4')>0){
+        $('#tb').text(localStorage.getItem('best4'))
+    }
+    else{
+        localStorage.setItem('best4', 0)
+        $('#tb').text(localStorage.getItem('best4'))
+    }
     
     insert(mas)
     m2048(mas)
@@ -473,16 +452,7 @@ $('#doge').on('click', function(){
     $('#doge').css('border','0.648vh solid #FF0000')
     $('#classic, #memes').css('border','0.185vh solid #000000')
     
-    for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            if(mas[i][j]!=0){
-                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String((blfs[mas[i][j]]-10*(n-4))/10.8)}vh'>${blocks[mas[i][j]]}</div>`)
-            }
-            else{
-                $('#bl'+ String(num(i,j))).empty()
-            }
-        }
-    }
+    draw()
 })
 $('#classic').on('click', function(){
     blocks={
@@ -501,16 +471,7 @@ $('#classic').on('click', function(){
     $('#classic').css('border','0.648vh solid #FF0000')
     $('#doge, #memes').css('border','0.185vh solid #000000')
     
-    for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            if(mas[i][j]!=0){
-                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String((blfs[mas[i][j]]-10*(n-4))/10.8)}vh'>${blocks[mas[i][j]]}</div>`)
-            }
-            else{
-                $('#bl'+ String(num(i,j))).empty()
-            }
-        }
-    }
+    draw()
 })
 $('#memes').on('click', function(){
     blocks={
@@ -529,16 +490,7 @@ $('#memes').on('click', function(){
     $('#memes').css('border','0.648vh solid #FF0000')
     $('#classic, #doge').css('border','0.185vh solid #000000')
     
-    for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            if(mas[i][j]!=0){
-                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String((blfs[mas[i][j]]-10*(n-4))/10.8)}vh'>${blocks[mas[i][j]]}</div>`)
-            }
-            else{
-                $('#bl'+ String(num(i,j))).empty()
-            }
-        }
-    }
+    draw()
 })
 $('#tryagain').on('click', function(){
     if(n==4){
@@ -552,6 +504,13 @@ $('#tryagain').on('click', function(){
 })
 
 // Code 
+$('#gameover').hide()
 insert(mas)
 m2048(mas)
-$('#gameover').hide()
+if(localStorage.getItem('best4')>0){
+    $('#tb').text(localStorage.getItem('best4'))
+}
+else{
+    localStorage.setItem('best4', 0)
+    
+}
