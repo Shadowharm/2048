@@ -1,364 +1,216 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body{
-    
-    background-color: #FFFDFD;
     margin: 0px;
+    background: #797979;
+    color: #FFFFFF;
+    font-family: Roboto;
+}
+#all{
     display: flex;
     flex-direction: column;
 }
 header{
-    width: 100%;
-    height: 10%;
-}
-#head{
-    background-color:#FBE204;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background: rgba(0, 194, 255, 0.7);
+    height: 10vh;
+    width: 100vw;
 }
 
+#t2048{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 10vmin;
+    
+
+}
 #m1{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    height: 90%;
+    height: 90vh;
 }
 #left{
     display: flex;
     flex-direction: column;
-    width: 12%;
-}
-#r153{
-    display: flex;
-    background: rgba(255, 122, 0, 0.5);
-    border-radius: 15px;
-    justify-content: center;
-    align-items: center;
+    width: 21.85vh;
 
 }
-#t2048{
-    font-family: Roboto;
+.leftbuttons{
+    border: 0.185vh solid #000000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 45vh;
+
     font-style: normal;
     font-weight: normal;
-    font-size: 6px;
-    
-    display: flex;
-    align-items: center;
+    font-size: 10vmin;
+    border-radius: 4.17vh;
     text-align: center;
-    color: black;
+    background: rgba(0, 194, 255, 0.7);
     
 }
 #r115{
-    width: 100%;
-    height: 50%;
-    
-    background: rgba(255, 127, 0, 0.7);
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor : pointer;
-    
+    border: 0.648vh solid #FF0000;
 }
-#t4x4{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 72px;
-    line-height: 84px;
-    text-align: center;
 
-}
-#r116{
-    width: 100%;
-    height: 50%;
-    
-    background: #FFC373;
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-#t5x5{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 72px;
-    line-height: 84px;
-    text-align: center;
-
-}
 #rez{
-    width: 13% ;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 5vmin;
+
+
+}
+.rezults{
+    background: rgba(0, 194, 255, 0.7);
+    border-radius: 1.4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 23vh;
+    height: 11vh;
+}
+.trez{
+    font-size: 3.33vh;
 }
 #score{
-    
-    width: 100%;
-    height: 11%;
-    
-
-    background: rgba(255, 122, 0, 0.7);
-    border-radius: 15px;
+    margin-top: 0.18vh;
+    margin-bottom: 1.667vh;
+}
+#delta{
+    opacity: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    
-    
+    font-size: 2.222vh;
+    margin-top: 1.2vh;
 }
-.tscore{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 42px;
+#tsdelta{
     display: flex;
-    align-items: center;
-    text-align: center;
-    
-    
-}
-
-
-/* #delta{
-    
-    width: 103px;
-    height: 43px;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-} */
-#best{
-    
-    width: 100%;
-    height: 11%;
-    
-
-    background: rgba(255, 122, 0, 0.7);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.tbest{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 42px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-#right{
-    width: 16.875%;
-    height: 100%;
-}
-#classic{
-    
-    width: 100%;
-    height: 33.3%;
-    padding-top: 5%;
-    cursor: pointer;
-    background: rgba(255, 127, 0, 0.7);
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-#imgclassic{
-    width: 60%;
-    height: 60%;
-    
-    border-radius: 31px;
-    
-}
-#tclassic{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 200%;
-    
-    text-align: center;
-}   
-#doge{
-    
-    width: 100%;
-    height: 33.3%;
-    padding-top: 5%;
-    cursor: pointer;
-    background: #FFC373;
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-#imgdoge{
-    width: 60%;
-    height: 60%;
-    
-    border-radius: 31px;
-    
-}
-#tdoge{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 200%;
-    
-    text-align: center;
-    
-}
-#memes{
-    padding-top: 5%;
-    width: 100%;
-    height: 33.4%;
-    
-    cursor: pointer;
-    background: #FFC373;
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-#imgmemes{
-    width: 60%;
-    height: 60%;
-    
-    border-radius: 31px;
-}
-#tmemes{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 200%;
-    
-    text-align: center;
-    
+    flex-direction: row;
+    padding-left: 6.5vh;
 }
 #center{
-    width: 46%;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #main{
-    
-    width: 100%;
-    
-    
-
-    background: rgba(191, 130, 48, 0.4);
-    border-radius: 15px;
-
+    width: 81vh;
+    height: 81vh;
+    background: rgba(0, 194, 255, 0.4);
+    border-radius: 1.4vh;
     display: flex;
     flex-wrap: wrap;
-    
-    
-    
-    
+    padding-bottom: 1.4vh;
 }
 .bl{
-    width: 23%;
-    height: 23%;
-    background: rgba(255, 146, 0, 0.25);
-    border: 1px solid #000000;
+    width: 18.5vh;
+    height: 18.5vh;
+    background: #FFBC58;
+    border: 0.093vh solid #000000;
     box-sizing: border-box;
-    border-radius: 15px;
+    border-radius: 1.4vh;
     
-    margin-left: 1.7%;
-    margin-top: 1.7%;
+    margin-left: 1.4vh;
+    margin-top: 1.4vh;
 
 }
-#bl13{
-    margin-bottom: 1.7%;
-}
-#bl14{
-    margin-bottom: 1.7%;
-}
-#bl15{
-    margin-bottom: 1.7%;
-}
-#bl16{
-    margin-bottom: 1.7%;
-}
-.bl4x4{
-    width: 100%;
-    height: 100%;
-    
-    border-radius: 15px;
+#right{
+    width: 30vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    font-family: Roboto;
+    flex-direction: column;
+    margin-left: 22vh;
 
 }
-.bl5x5{
-    width:162px;
-    height: 162px;
-    
-    border-radius: 15px;
+.rightbuttons{
+    border: 0.185vh solid #000000;
+    box-sizing: border-box;
+    height: 30vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    
-    font-family: Roboto;
-    
+    background: rgba(0, 194, 255, 0.7);
+    border-radius: 4.17vh;
+    cursor: pointer;
+}
+#classic{
+    border: 0.648vh solid #FF0000;
+}
+
+
+.imges{
+    width: 18.5vh;
+    height: 18.5vh;
+    border-radius: 2.88vh;
+}
+.textsrb{
+
+    font-size: 5vh;
 }
 #gameover{
-    
-    
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    left: 0px;
+    top:0px;
+
+    width: 100vw;
+    height: 100vh;
     background: rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    color: black;
 
 }
 #go{
-    font-family: Roboto;
+    
     font-style: normal;
     font-weight: normal;
-    font-size: 96px;
-    line-height: 112px;
+    font-size: 8.889vh;
+    
     text-align: center;
 }
 #tryagain{
-    width: 363px;
-    height: 93px;
+    width: 33.61vh;
+    height: 8.61vh;
     background-color: #E4E4E4;
     opacity: 0.8;
-    border-radius: 15px;
+    border-radius: 1.389vh;
     display: flex;
     justify-content: center;
+    font-size: 5.926vh;
     cursor: pointer;
 }
-#textta{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 64px;
-    line-height: 75px;
-    text-align: center;
+.bl4x4{
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 1.389vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 
+
+}
+.bl5x5{
+    width:100%;
+    height: 100%;
+    
+    border-radius: 1.389vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    
 }

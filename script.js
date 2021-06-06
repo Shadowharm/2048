@@ -26,7 +26,7 @@ function m2048(mas){
     for(i=0;i<n;i++){
         for(j=0;j<n;j++){
             if(mas[i][j]!=0){
-                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String(blfs[mas[i][j]]-10*(n-4))}px'>${blocks[mas[i][j]]}</div>`)
+                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String((blfs[mas[i][j]]-10*(n-4))/10.8)}vh'>${blocks[mas[i][j]]}</div>`)
             }
             else{
                 $('#bl'+ String(num(i,j))).empty()
@@ -272,8 +272,9 @@ $('body').on('keydown', function(event){
             if(delta!=0){
                 $('#delta').finish()
                 $('#delta').text('+'+String(delta))
-                $('#delta').fadeIn(300)
-                $('#delta').fadeOut(300)
+                $('#delta').fadeTo(300, 1)
+                $('#delta').fadeTo(300,0)
+                
             }
             
             
@@ -309,8 +310,8 @@ $('body').on('keydown', function(event){
 
                 $('#delta').text('+'+String(delta))
                 
-                $('#delta').fadeIn(300)
-                $('#delta').fadeOut(300)
+                $('#delta').fadeTo(300, 1)
+                $('#delta').fadeTo(300,0)
             }
             if((emptyNums(mas))){
                 m2048(mas)
@@ -342,8 +343,8 @@ $('body').on('keydown', function(event){
                 $('#delta').finish()
 
                 $('#delta').text('+'+String(delta))
-                $('#delta').fadeIn(300)
-                $('#delta').fadeOut(300)
+                $('#delta').fadeTo(300, 1)
+                $('#delta').fadeTo(300,0)
             }
             if(emptyNums(mas)){
                 m2048(mas)
@@ -375,8 +376,9 @@ $('body').on('keydown', function(event){
                 $('#delta').finish()
 
                 $('#delta').text('+'+String(delta))
-                $('#delta').fadeIn(300)
-                $('#delta').fadeOut(300)
+                $('#delta').fadeTo(300, 1)
+                $('#delta').fadeTo(300,0)
+                
             }
             if(emptyNums(mas)){
                 m2048(mas)
@@ -410,19 +412,17 @@ $('#r116').on('click', function(){
         $('#main').append(`<div class="bl" id="bl${i}"></div>`)
     }
     $('#main').css({
-        'width': '915px',
-        'height': '915px',
-        'left': '502px',
-        'top': '129px'
+        'width': '84.72vh',
+        'height': '84.72vh',
+        
     })
     $('.bl').css({
-        'width': '165px',
-        'height': '165px'
+        'width': '15.278vh',
+        'height': '15.278vh'
     })
-    $('#bl13,#bl14,#bl15,#bl16').css('margin-bottom', '0px')
-    $('#bl21,#bl22,#bl23,#bl24,#bl25').css('margin-bottom', '15px')
-    $('#r116').css('background','rgba(255, 127, 0, 0.7)')
-    $('#r115').css('background','#FFC373')
+    
+    $('#r116').css('border','0.648vh solid #FF0000')
+    $('#r115').css('border','0.185vh solid #000000')
     
 
 
@@ -441,18 +441,16 @@ $('#r115').on('click', function(){
         $('#main').append(`<div class="bl" id="bl${i}"></div>`)
     }
     $('#main').css({
-        'width': '875px',
-        'height': '875px',
-        'left': '522px',
-        'top': '157px'
+        'width': '81vh',
+        'height': '81vh',
     })
     $('.bl').css({
-        'width': '200px',
-        'height': '200px'
+        'width': '18.5vh',
+        'height': '18.5vh'
     })
-    $('#bl13,#bl14,#bl15,#bl16').css('margin-bottom', '15px')
-    $('#r115').css('background','rgba(255, 127, 0, 0.7)')
-    $('#r116').css('background','#FFC373')
+    
+    $('#r115').css('border','0.648vh solid #FF0000')
+    $('#r116').css('border','0.185vh solid #000000')
     
     insert(mas)
     m2048(mas)
@@ -472,13 +470,13 @@ $('#doge').on('click', function(){
         1024:`<img src="https://media.giphy.com/media/9C1nyePnovqlpEYFMD/giphy.gif" alt="" class='bl${n}x${n}'>`,
         2048:`<img src="https://media.giphy.com/media/2YIB4zBoMFI1XDbhXU/giphy.gif" alt="" class='bl${n}x${n}'>`
     }
-    $('#doge').css('background', 'rgba(255, 127, 0, 0.7)')
-    $('#classic').css('background', '#FFC373')
-    $('#memes').css('background', '#FFC373')
+    $('#doge').css('border','0.648vh solid #FF0000')
+    $('#classic, #memes').css('border','0.185vh solid #000000')
+    
     for(i=0;i<n;i++){
         for(j=0;j<n;j++){
             if(mas[i][j]!=0){
-                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String(blfs[mas[i][j]]-10*(n-4))}px'>${blocks[mas[i][j]]}</div>`)
+                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String((blfs[mas[i][j]]-10*(n-4))/10.8)}vh'>${blocks[mas[i][j]]}</div>`)
             }
             else{
                 $('#bl'+ String(num(i,j))).empty()
@@ -500,13 +498,13 @@ $('#classic').on('click', function(){
         1024:'1024',
         2048:'2048'
     }
-    $('#classic').css('background', 'rgba(255, 127, 0, 0.7)')
-    $('#doge').css('background', '#FFC373')
-    $('#memes').css('background', '#FFC373')
+    $('#classic').css('border','0.648vh solid #FF0000')
+    $('#doge, #memes').css('border','0.185vh solid #000000')
+    
     for(i=0;i<n;i++){
         for(j=0;j<n;j++){
             if(mas[i][j]!=0){
-                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String(blfs[mas[i][j]]-10*(n-4))}px'>${blocks[mas[i][j]]}</div>`)
+                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String((blfs[mas[i][j]]-10*(n-4))/10.8)}vh'>${blocks[mas[i][j]]}</div>`)
             }
             else{
                 $('#bl'+ String(num(i,j))).empty()
@@ -528,13 +526,13 @@ $('#memes').on('click', function(){
         1024:`<img src="https://sun9-60.userapi.com/impg/wn0xooBW7bby555JYjGCw27f_NjfqfXVrq_5Pw/c-y5Y8r054Y.jpg?size=1080x1008&quality=96&sign=c3c9ce4c0997e3f7242f5f96affa90b5&type=album" alt="" class='bl${n}x${n}'>`,
         2048:`<img src="https://sun9-39.userapi.com/impg/dkCN6-uZJdAlYPfU37ZDPA_F1s0zCJrf-o3yTw/ZmYHSVmh-Lk.jpg?size=720x707&quality=96&sign=223d917c868a2150be43fee2360aff9f&type=album" alt="" class='bl${n}x${n}'>`
     }
-    $('#memes').css('background', 'rgba(255, 127, 0, 0.7)')
-    $('#classic').css('background', '#FFC373')
-    $('#doge').css('background', '#FFC373')
+    $('#memes').css('border','0.648vh solid #FF0000')
+    $('#classic, #doge').css('border','0.185vh solid #000000')
+    
     for(i=0;i<n;i++){
         for(j=0;j<n;j++){
             if(mas[i][j]!=0){
-                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String(blfs[mas[i][j]]-10*(n-4))}px'>${blocks[mas[i][j]]}</div>`)
+                $('#bl'+ String(num(i,j))).html(`<div class='bl${n}x${n}' style='background-color:${blbgcolors[mas[i][j]]}; color:${blcolors[mas[i][j]]}; font-size:${String((blfs[mas[i][j]]-10*(n-4))/10.8)}vh'>${blocks[mas[i][j]]}</div>`)
             }
             else{
                 $('#bl'+ String(num(i,j))).empty()
