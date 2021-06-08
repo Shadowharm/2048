@@ -74,7 +74,7 @@ function emptyNums(mas){
 }
 
 function insert24(mas, x, y){
-    if(randomInt(0,4)==0){
+    if(randomInt(0,10)==0){
         mas[x][y]=4
     }
     else{
